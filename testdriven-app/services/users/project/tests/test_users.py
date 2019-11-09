@@ -138,7 +138,7 @@ class TestUserService(BaseTestCase):
             self.assertIn('success', data['status'])
 
     def test_main_no_users(self):
-        """Ensure the main route behaves correctly when no users have been 
+        """Ensure the main route behaves correctly when no users have been\
         added to the database."""
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
@@ -146,7 +146,7 @@ class TestUserService(BaseTestCase):
         self.assertIn(b'<p>No users!</p>', response.data)
 
     def test_main_with_users(self):
-        """Ensure the main route behaves correctly when users have been
+        """Ensure the main route behaves correctly when users have been\
         added to the database."""
         add_user('alex', 'alex@example.com')
         add_user('tequila', 'tequila@puppers.net')
