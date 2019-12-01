@@ -81,7 +81,7 @@ class App extends Component {
       window.localStorage.setItem('authToken', res.data.auth_token);
       this.setState({ isAuthenticated: true, });
     })
-      .catch((err) => { console.log(err); });
+    .catch((err) => { console.log(err); });
   };
   handleFormChange(event) {
     const obj = this.state.formData;
