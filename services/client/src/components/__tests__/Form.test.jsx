@@ -36,9 +36,9 @@ testData.forEach((el) => {
     const wrapper = shallow(component);
     const h1 = wrapper.find('h1');
     expect(h1.length).toBe(1);
-    expect(h1.get(0).props.children).toBe(el.Title);
+    expect(h1.get(0).props.children).toBe(el.title);
     const formGroup = wrapper.find('.field');
-    expect(formGroup.length).toBe(3);
+    expect(formGroup.length).toBe(Object.keys(el.formData).length);
     expect(formGroup.get(0).props.children.props.name).toBe(Object.keys(el.formData)[0]);
     expect(formGroup.get(0).props.children.props.value).toBe('');
   });

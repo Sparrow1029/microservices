@@ -44,6 +44,7 @@ services:
     build:
       context: ./services/client
       dockerfile: Dockerfile
+      network: host
     volumes:
       - './services/client:/usr/src/app'
       - '/usr/src/app/node_modules'
