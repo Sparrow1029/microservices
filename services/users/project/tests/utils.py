@@ -7,3 +7,11 @@ def add_user(username, email, password):
     db.session.add(user)
     db.session.commit()
     return user
+
+
+def add_admin_user(username, email, password):
+    new_user = add_user(username, email, password)
+    # update user
+    user = User.query.filter_by(email=new_user.email).first()
+    user.admin = True
+    db.session.commit()
